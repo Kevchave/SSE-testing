@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 
+
 app = Flask(__name__)
+
 
 @app.route("/")
 def hello_world():
@@ -19,4 +21,3 @@ def process_query(query):
         return "Dinosaurs ruled the Earth 200 million years ago"
     else:
         return "Unknown"
-
