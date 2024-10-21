@@ -30,10 +30,10 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.12
+        	python-version: 3.12
 		  - name: install pytest
 			  run: pip install pytest
 		  - name: install Flask 
 			  run: pip install Flask
       - name: Run pytest
-        run: pytest .
+        run: pytest src/*.py
