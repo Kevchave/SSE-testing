@@ -34,16 +34,16 @@ jobs:
         run: pytest src/*.py
 
 
-	deploy-to-imaas:
-		needs: python-formatting
-		runs-on: ubuntu-latest
-			steps:
-		- name: Checkout 
-			uses: actions/checkout@v4
+  deploy-to-impaas:
+    needs: unit-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-		- name: ImPaas-Deploy
-			uses: /impaas/impaas-deploy@v3
-			with: 
-				app-name: KC2524
-				deployment-token: ${{ secrets.IMPASS_DEPLOY_TOKEN }}
-				method: PLATFORM
+      - name: ImPaaS-Deploy
+        uses: /impaas/impaas-deploy@v3
+        with:
+          app-name: axp24-sse-app
+          deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
+          method: PLATFORM
