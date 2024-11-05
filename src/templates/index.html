@@ -30,5 +30,11 @@
         <input type="number" id="agefield" name="age">
         <input type="submit" value="Submit">
     </form>
+	<h2>Github Username Lookup</h2>
+	<form action ="{{url_for('github') }}" method="POST">
+		<label for="username">GitHub Username:</label>
+		<input type="text" id="username" name="username" required>
+		<button type="submit">Submit</button>
+	</form>
 </body>
 </html>

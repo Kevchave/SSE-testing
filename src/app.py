@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 
 app = Flask(__name__)
@@ -26,3 +26,9 @@ def process_query(q):
         return "Dinosaurs ruled the Earth 200 million years ago"
     else:
         return "Unknown"
+
+
+@app.route("/github", methods=["POST"])
+def github():
+	github_username = request.form.get("username")
+	return render_template("hello.html", username=github_username)
