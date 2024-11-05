@@ -30,5 +30,5 @@ def process_query(q):
 
 @app.route("/github", methods=["POST"])
 def github():
-	github_username = request.form.get("username")
-	return render_template("hello.html", username=github_username)
+    github_username = request.form.get("username")
+    return render_template("hello.html", username=github_username)
